@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/txtAdHead"
+        style="@style/text20sp_black_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today's Top Deals"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardHome"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bannerHeight"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAdHead"
+        android:elevation="8dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardCornerRadius="5dp"
+        android:layout_marginStart="@dimen/margin_4dp"
+        android:layout_marginEnd="@dimen/margin_4dp"
+        android:layout_marginTop="@dimen/margin_10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vpBannerSlider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:id="@+id/lytIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_25dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardHome"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginBottom="@dimen/activity_vertical_margin">
+        <me.huseyinozer.TooltipIndicator
+            android:id="@+id/tooltip_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:ti_lineWidth="24dp"
+            app:ti_lineWidthSelected="24dp"
+            app:ti_lineHeight="@dimen/margin_2dp"
+
+            app:ti_lineMargin="@dimen/margin_4dp"
+
+            app:ti_selectedLineDrawable="@drawable/indicator_selected"
+            app:ti_unselectedLineDrawable="@drawable/indicator_unselected"
+
+            app:ti_tooltipWidth="100dp"
+            app:ti_tooltipHeight="180dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

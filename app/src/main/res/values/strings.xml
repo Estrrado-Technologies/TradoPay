@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TradoPay</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_explore">Explore</string>
+    <string name="title_favourites">Favourites</string>
+    <string name="title_wallet">Wallet</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="trado">TRADO</string>
+    <string name="pay">PAY</string>
+    <string name="logoText">We Personalize Your Needs</string>
+    <string name="otpSend">SEND OTP</string>
+    <string name="ph">Phone Number</string>
+    <string name="title_activity_home_detailed">MainActivity</string>
+</resources>

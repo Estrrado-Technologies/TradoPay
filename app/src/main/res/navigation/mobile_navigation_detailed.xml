@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_detailed">
+
+    <fragment
+        android:id="@+id/navigation_detailed"
+        android:name="com.estrrado.tradopay.ui.modules.home.HomeItemDetailChildFragment"
+        android:label="Dining"
+        tools:layout="@layout/fragment_homedetail_child" />
+
+    <fragment
+        android:id="@+id/navigation_wallet"
+        android:name="com.estrrado.tradopay.ui.modules.wallet.WalletFragment"
+        android:label="@string/title_wallet"
+        tools:layout="@layout/fragment_wallet" />
+
+
+    <fragment
+        android:id="@+id/navigation_explore"
+        android:name="com.estrrado.tradopay.ui.modules.explore.ExploreFragment"
+        android:label="@string/title_explore"
+        tools:layout="@layout/fragment_explore" />
+
+
+    <fragment
+        android:id="@+id/navigation_favourites"
+        android:name="com.estrrado.tradopay.ui.modules.favourites.FavouriteFragment"
+        android:label="@string/title_favourites"
+        tools:layout="@layout/fragment_favourite"/>
+
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.estrrado.tradopay.ui.modules.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+</navigation>
