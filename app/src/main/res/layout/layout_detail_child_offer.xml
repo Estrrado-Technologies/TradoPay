@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/offercardWidth"
+    android:layout_height="wrap_content"
+    android:id="@+id/cardOffer"
+    android:elevation="8dp"
+    app:cardElevation="@dimen/margin_5dp"
+    app:cardCornerRadius="7dp">
+<androidx.constraintlayout.widget.ConstraintLayout
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/margin_7dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offercardImgHeight"
+        android:id="@+id/cardOfferImg"
+        android:elevation="0dp"
+        app:cardElevation="0dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="@dimen/margin_7dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/OfferImg"
+            android:background="@drawable/ic_login_bottom"/>
+
+           <TextView
+               android:id="@+id/txtOfferTime"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               style="@style/text12sp_orange_bold"
+               android:textStyle="normal"
+               android:drawableStart="@drawable/ic_time"
+               android:drawablePadding="@dimen/margin_5dp"
+             android:text="28 mins"
+               android:gravity="center"
+               android:layout_margin="@dimen/margin_5dp"
+               android:background="@drawable/round_corner_bg"
+              />
+
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text16sp_black_bold"
+        android:text="Zam Zam YAR"
+      app:layout_constraintTop_toBottomOf="@+id/cardOfferImg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/margin_7dp"
+        android:layout_marginStart="@dimen/margin_5dp"
+       android:layout_marginEnd="@dimen/margin_10dp" />
+    <TextView
+        android:id="@+id/txtAdrs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See All"
+        style="@style/text12sp_grey"
+        app:layout_constraintTop_toBottomOf="@+id/txtName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_marginStart="@dimen/margin_5dp"
+        android:layout_marginEnd="@dimen/margin_10dp" />
+    <TextView
+        android:id="@+id/txtdistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See All"
+        style="@style/text12sp_black"
+        android:drawableStart="@drawable/ic_pin"
+        android:drawablePadding="@dimen/margin_5dp"
+        android:textColor="@color/app_orange"
+        app:layout_constraintTop_toBottomOf="@+id/txtAdrs"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/margin_5dp"
+       android:layout_marginStart="2dp"
+        android:layout_marginEnd="@dimen/margin_10dp"
+       />
+
+    <TextView
+        android:id="@+id/txtRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4.9"
+        style="@style/text12sp_white"
+        android:background="@drawable/circle_text"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/txtName"
+        android:layout_marginRight="@dimen/margin_5dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_marginStart="@dimen/margin_5dp"
+        android:layout_marginEnd="@dimen/margin_10dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

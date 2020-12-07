@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView  xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="@dimen/offercardImgHeight"
+android:id="@+id/cardOffer"
+android:elevation="8dp"
+android:divider="@android:color/transparent"
+android:dividerHeight="0.0px"
+android:clipToPadding="false"
+android:clipChildren="false"
+app:cardElevation="15dp"
+app:cardPreventCornerOverlap="false"
+app:cardCornerRadius="10dp"
+ android:layout_margin="@dimen/margin_7dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@color/app_orange"
+    android:padding="@dimen/margin_10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:drawablePadding="@dimen/margin_5dp"
+        android:text="Device Location is Off"
+        style="@style/text20sp_black_bold"
+        android:drawableStart="@drawable/ic_location"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_5dp"
+        android:textAlignment="center"
+        android:text="Please turn on your location to ensure\n hassle free experience"
+        style="@style/text12sp_white"
+       android:layout_marginBottom="@dimen/margin_10dp"/>
+
+    <Button
+
+        android:id="@+id/algo_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_10dp"
+        android:textAllCaps="false"
+        android:background="@color/white"
+        android:textSize="14sp"
+
+        android:drawablePadding="@dimen/margin_5dp"
+        android:drawableStart="@drawable/ic_time"
+        android:textColor="@color/app_orange"
+       android:text="Turn on device location" />
+
+
+
+</LinearLayout>
+</androidx.cardview.widget.CardView>

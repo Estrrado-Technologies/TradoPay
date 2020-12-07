@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardHome"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/txtAdHead"
+    app:cardElevation="@dimen/margin_5dp"
+    app:cardCornerRadius="7dp"
+    app:cardBackgroundColor="@color/white"
+    android:layout_margin="@dimen/margin_5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_7dp"
+        android:layout_marginStart="@dimen/margin_5dp"
+        android:layout_marginRight="@dimen/margin_7dp"
+        android:padding="@dimen/margin_5dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/txtHomeItem"
+            style="@style/text16sp_black_bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4dp"
+            android:text="Delivery at your door steps"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/g1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55"
+            app:layout_constraintLeft_toLeftOf="@id/txtHomeItem" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.84"
+            app:layout_constraintLeft_toLeftOf="@id/txtHomeItem" />
+
+
+        <ImageView
+            android:id="@+id/imgHomeItemBg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/ic_login_bottom"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="@id/g1"
+            app:layout_constraintStart_toStartOf="@+id/g1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtHomeItemDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:text="Restaurant,Bakery,Grocery,Household Items and many other Items"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/g2"
+            app:layout_constraintTop_toBottomOf="@+id/txtHomeItem" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnProceed"
+            style="@style/button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/card_detail_round_radius"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:layout_marginBottom="@dimen/margin_10dp"
+            android:background="@drawable/button_bg"
+            android:text="Order Now"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtHomeItemDetail" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

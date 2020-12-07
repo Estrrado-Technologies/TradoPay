@@ -1,0 +1,38 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
+    <dimen name="margin_4dp">4dp</dimen>
+    <dimen name="bannerHeight">150dp</dimen>
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_40dp">40dp</dimen>
+    <dimen name="margin_7dp">7dp</dimen>
+    <dimen name="detailItemRound">100dp</dimen>
+    <dimen name="width_200">200dp</dimen>
+    <dimen name="margin_25dp">25dp</dimen>
+    <dimen name="margin15">15dp</dimen>
+    <dimen name="offercardWidth">250dp</dimen>
+    <dimen name="offercardHeight">170dp</dimen>
+    <dimen name="offercardImgHeight">140dp</dimen>
+    <!--
+    Because the window insets on round devices are larger than 15dp, this padding only applies
+    to square screens.
+    -->
+    <dimen name="box_inset_layout_padding">0dp</dimen>
+
+    <!--
+    This padding applies to both square and round screens. The total padding between the buttons
+    and the window insets is box_inset_layout_padding (above variable) on square screens and
+    inner_frame_layout_padding (below variable) on round screens.
+    -->
+    <dimen name="inner_frame_layout_padding">5dp</dimen>
+    <dimen name="pad40sp">40dp</dimen>
+    <dimen name="txt30sp">30sp</dimen>
+    <dimen name="margin_2dp">2dp</dimen>
+    <dimen name="card_detail_round">70dp</dimen>
+    <dimen name="cardRadius30">30dp</dimen>
+    <dimen name="width_locDetails">260dp</dimen>
+    <dimen name="card_detail_round_radius">35dp</dimen>
+</resources>

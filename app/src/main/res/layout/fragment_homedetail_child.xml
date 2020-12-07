@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin_10dp"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/lytBanner"
+        layout="@layout/layout_home_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="@dimen/margin_5dp"/>
+    <RelativeLayout
+        android:id="@+id/lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lytBanner"
+        android:layout_marginRight="@dimen/margin_5dp"
+        android:layout_marginTop="@dimen/margin_7dp"
+        android:layout_marginBottom="@dimen/margin_5dp">
+
+    <TextView
+        android:id="@+id/txtDetailChild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text20sp_black_bold"
+        android:text="Delivery at your door steps"
+      />
+        <TextView
+            android:id="@+id/txt_SeeAll_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See All"
+            style="@style/text12sp_black_bold"
+            android:textColor="@color/text_clr_seeall"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="false"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/griditems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_7dp"
+        android:layout_marginRight="@dimen/margin_7dp"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/lyt"
+        android:layout_marginTop="@dimen/margin_10dp"
+        tools:itemCount="5"
+       tools:listitem="@layout/layout_home_detail_item" />
+    <androidx.core.widget.NestedScrollView
+        app:layout_constraintTop_toBottomOf="@id/griditems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+<RelativeLayout
+    android:id="@+id/lytOffer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:layout_marginRight="@dimen/margin_5dp"
+    android:layout_marginTop="@dimen/margin15"
+    android:layout_marginBottom="@dimen/margin_5dp">
+
+    <TextView
+        android:id="@+id/txtOfferHead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text20sp_black_bold"
+        android:text="Great Offers"
+        android:layout_alignParentEnd="false"
+      android:layout_alignParentStart="true"
+     />
+    <TextView
+        android:id="@+id/txtSeeAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See All"
+        style="@style/text12sp_black_bold"
+        android:textColor="@color/text_clr_seeall"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="false"
+        android:layout_centerInParent="true" />
+</RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvofferList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_7dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/lytOffer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="@dimen/margin_20dp"
+        tools:listitem="@layout/layout_detail_child_offer"
+        tools:itemCount="5"
+        android:backgroundTint="@color/white"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvAds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:listitem="@layout/layout_ads_detaild_child"
+        tools:itemCount="2"
+        android:layout_marginTop="@dimen/margin_10dp"
+        app:layout_constraintTop_toBottomOf="@id/rcvofferList"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <RelativeLayout
+        android:id="@+id/lytTrending"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rcvAds"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="@dimen/margin_5dp"
+        android:layout_marginTop="@dimen/margin15"
+        android:layout_marginBottom="@dimen/margin_5dp">
+
+        <TextView
+            android:id="@+id/txtTrend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text20sp_black_bold"
+            android:text="Trending Places"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="true"
+            />
+        <TextView
+            android:id="@+id/txtSeeAllTrend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See All"
+            style="@style/text12sp_black_bold"
+            android:textColor="@color/text_clr_seeall"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="false"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvTrendingList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/lytTrending"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:itemCount="5"
+        android:backgroundTint="@color/white"
+        tools:listitem="@layout/layout_detail_child_offer"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/itemList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/rcvTrendingList"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/margin15"
+        tools:itemCount="5"
+        tools:listitem="@layout/layout_home_item_child_main_item"/> </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

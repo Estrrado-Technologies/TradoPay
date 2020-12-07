@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.tradopay" >
+
+    <application
+        android:name="com.estrrado.tradopay.ui.app.TradoPay"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TradoPay" >
+        <activity
+            android:name="com.estrrado.tradopay.ui.modules.home.HomeDetailedActivity"
+            android:label="@string/title_activity_home_detailed" >
+        </activity>
+        <activity
+            android:name="com.estrrado.tradopay.ui.modules.auth.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.estrrado.tradopay.ui.modules.MainActivity" />
+    </application>
+
+</manifest>
