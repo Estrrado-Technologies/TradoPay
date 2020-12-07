@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.estrrado.tradopay.ui.modules.explore.ExploreOpenActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.TradoPay.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:contentInsetStart="0dp"
+            app:contentInsetEnd="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetLeft="0dp"
+            android:contentInsetStart="0dp"
+            android:contentInsetLeft="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetEnd="0dp"
+            android:paddingLeft="0dp"
+            android:paddingStart="0dp"
+            android:minWidth="0dp"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+            app:contentInsetStartWithNavigation="0dp"
+            app:popupTheme="@style/Theme.TradoPay.PopupOverlay">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <EditText
+                    android:id="@+id/icSearch"
+                    style="@style/text14sp_black"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/card_detail_round_radius"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    android:background="@drawable/edt_bg"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_baseline_search_24"
+                    android:drawablePadding="@dimen/margin_10dp"
+                    android:hint="@string/searchHint"
+                    android:textColorHint="@color/unselectedGrey"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_explore_open" app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

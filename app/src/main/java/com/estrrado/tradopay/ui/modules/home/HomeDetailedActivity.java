@@ -2,9 +2,13 @@ package com.estrrado.tradopay.ui.modules.home;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -14,6 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeDetailedActivity extends AppCompatActivity {
     Toolbar toolbar;
+    private NavController.OnDestinationChangedListener onDestinationChangedListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +34,19 @@ public class HomeDetailedActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-    }
 
+        onDestinationChangedListener=new NavController.OnDestinationChangedListener() {
+            @Override
+            public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
+                Fragment fragment=getSupportFragmentManager().getPrimaryNavigationFragment().getChildFragmentManager().getPrimaryNavigationFragment();
+                if(fragment instanceof HomeItemDetailChildFragment)
+                {
+                    navView.setSelectedItemId(R.id.navigation_detailed);
+                }
+
+            }
+
+    };
+
+    }
 }

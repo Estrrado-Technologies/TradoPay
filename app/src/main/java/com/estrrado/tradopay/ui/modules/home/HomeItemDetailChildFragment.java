@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -45,6 +46,10 @@ public class HomeItemDetailChildFragment extends Fragment {
     private String mParam2;
     ViewPager vpBannerSlider;
     RecyclerView griditems,rcvOffers,rcvTrendingList,rcvMainList,rcvAds;
+    int[] images={R.drawable.puttu,R.drawable.prawns_biriyani,R.drawable.burger,R.drawable.alcohol,R.drawable.puttu};
+    int[] imagAds={R.drawable.chat,R.drawable.scty};
+    String[] headings_cusin={" South Indian","Biriyani","Burger","Bevereges"," South Indian"};
+    String[] headings_ads={"Booking Appoinments Made Easy","Order Anything From Anywhere"};
 
     public HomeItemDetailChildFragment() {
         // Required empty public constructor
@@ -84,18 +89,21 @@ public class HomeItemDetailChildFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_homedetail_child, container, false);
         BannerViewPagerAdapter adapter = new BannerViewPagerAdapter(getActivity());
         vpBannerSlider = view.findViewById(R.id.vpBannerSlider);
+       TextView txtAdHead =view.findViewById(R.id.txtAdHead);
         griditems= view.findViewById(R.id.griditems);
         rcvOffers= view.findViewById(R.id.rcvofferList);
         rcvAds= view.findViewById(R.id.rcvAds);
         rcvTrendingList= view.findViewById(R.id.rcvTrendingList);
         rcvMainList= view.findViewById(R.id.itemList);
+        txtAdHead.setText("");
+        txtAdHead.setVisibility(View.GONE);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
         LinearLayoutManager linearLayoutManager_rcvOffers=new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
         LinearLayoutManager linearLayoutManager_trending=new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
         LinearLayoutManager linearLayoutManager_ads=new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
         LinearLayoutManager linearLayoutManagerMain=new LinearLayoutManager(getContext());
        griditems.setLayoutManager(linearLayoutManager);
-       griditems.addItemDecoration(new ItemOffsetDecoration(5));
+       griditems.addItemDecoration(new ItemOffsetDecoration(2));
         rcvOffers.setLayoutManager(linearLayoutManager_rcvOffers);
         rcvTrendingList.setLayoutManager(linearLayoutManager_trending);
         rcvMainList.setLayoutManager(linearLayoutManagerMain);
@@ -108,7 +116,7 @@ public class HomeItemDetailChildFragment extends Fragment {
             public void onItemClick(Object object, int position) {
 
             }
-        }));
+        },headings_ads,imagAds));
         HomeDetailOfferAdapter homeDetailOfferAdapter=new HomeDetailOfferAdapter(new OnItemSelectedlistner() {
             @Override
             public void onItemClick(Object object, int position) {
@@ -128,7 +136,7 @@ public class HomeItemDetailChildFragment extends Fragment {
            public void onItemClick(Object object, int position) {
 
            }
-       }));
+       },headings_cusin,images));
         //HomeDetailOfferAdapter
         vpBannerSlider.setAdapter(adapter);
         TooltipIndicator indicator = view.findViewById(R.id.tooltip_indicator);

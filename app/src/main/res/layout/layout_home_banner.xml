@@ -5,10 +5,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <TextView
         android:id="@+id/txtAdHead"
-        style="@style/text20sp_black_bold"
+        style="@style/text16sp_black_bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Today's Top Deals"
+        android:text=""
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="@dimen/margin_5dp"
@@ -23,14 +23,15 @@
         android:elevation="8dp"
         android:divider="@android:color/transparent"
         android:dividerHeight="0.0px"
-        android:clipToPadding="false"
+        android:clipToPadding="true"
         android:clipChildren="false"
-        app:cardElevation="10dp"
+        app:cardElevation="@dimen/margin_10dp"
         app:cardPreventCornerOverlap="false"
-        app:cardCornerRadius="5dp"
+        app:cardCornerRadius="@dimen/margin_5dp"
         android:layout_marginStart="@dimen/margin_4dp"
         android:layout_marginEnd="@dimen/margin_4dp"
-        android:layout_marginTop="@dimen/margin_10dp">
+        android:layout_marginTop="@dimen/margin_10dp"
+        app:contentPadding="@dimen/margin_5dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

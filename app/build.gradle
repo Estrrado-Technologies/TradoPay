@@ -43,6 +43,7 @@ dependencies {
     implementation 'com.facebook.fresco:fresco:2.3.0'
     //viewpager indicator
     implementation 'me.huseyinozer:tooltipindicator:0.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

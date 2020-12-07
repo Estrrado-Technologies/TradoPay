@@ -14,11 +14,16 @@
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
-    app:contentInsetStart="@dimen/margin_5dp"
+    app:contentInsetStart="0dp"
+    app:contentInsetEnd="0dp"
+    app:contentInsetRight="0dp"
     app:contentInsetLeft="0dp">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_2dp"
+        android:paddingEnd="@dimen/margin_8dp"
+        android:paddingStart="@dimen/margin_7dp">
 
     <TextView
         android:id="@+id/txtLocStatus"
@@ -26,6 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Work"
+        android:gravity="center"
         android:layout_marginTop="@dimen/margin_2dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +45,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_5dp"
+            android:layout_marginStart="@dimen/margin_3dp"
             android:text="Kalavarthala road, Kattaikonam,Thiruvanathapuram"
             app:layout_constraintEnd_toStartOf="@+id/imgHome"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -48,8 +55,8 @@
 
         <ImageView
             android:id="@+id/imgHome"
-            android:layout_width="@dimen/margin_40dp"
-            android:layout_height="@dimen/margin_40dp"
+            android:layout_width="@dimen/card_detail_round_radius"
+            android:layout_height="@dimen/card_detail_round_radius"
             android:layout_marginTop="@dimen/margin_5dp"
             android:layout_marginLeft="@dimen/margin_5dp"
             android:layout_marginRight="@dimen/margin_7dp"
@@ -59,12 +66,13 @@
             app:layout_constraintTop_toTopOf="parent" />
         <ImageView
             android:id="@+id/imgUser"
-            android:layout_width="@dimen/margin_40dp"
-            android:layout_height="@dimen/margin_40dp"
+            android:layout_width="@dimen/card_detail_round_radius"
+            android:layout_height="@dimen/card_detail_round_radius"
             android:layout_margin="@dimen/margin_5dp"
             android:background="@drawable/ic_user"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.appcompat.widget.Toolbar>
     <com.google.android.material.bottomnavigation.BottomNavigationView

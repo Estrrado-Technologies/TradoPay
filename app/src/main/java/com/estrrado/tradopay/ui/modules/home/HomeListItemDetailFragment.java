@@ -11,12 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.estrrado.tradopay.ui.modules.OnItemSelectedlistner;
 import com.estrrado.tradopay.ui.modules.home.adapter.HomeDetailedrRoundItemAdapter;
-import com.estrrado.tradopay.ui.modules.home.adapter.HomeItemsDetailAdapter;
 import com.estrrado.tradopay.ui.modules.home.adapter.HomeItemsListAdapter;
+import com.estrrado.tradopay.ui.utilities.ItemOffsetDecoration;
 import com.example.tradopay.R;
 
 /**
@@ -34,7 +33,10 @@ public class HomeListItemDetailFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    int[] images_detail={R.drawable.rest,R.drawable.bak,R.drawable.groc,R.drawable.frut,R.drawable.book,R.drawable.cloth,R.drawable.elec,R.drawable.medi};
+    String[] headings_detail={"Restaurants","Bakery","Groceries","Fruits &\nVegetables","Books","Cloths","Electronics","Medicines"};
+    String headings[] [] ={{"Delivery At Your Doorsteps","Restaurants,Bakery,Grocery,Household Items and many other items","Order Now"},{"Book Your Appointments","Doctors,Car/Bike Wash & Service centers,, Saloons,Spa/Parlors,Gyms and other services","Book Now"},{"Cashbacks and Offers" ,"View Cashbacks and Offers","View All"}};
+    int[] images={R.drawable.scty_grl,R.drawable.appoinmt,R.drawable.sale};
     public HomeListItemDetailFragment() {
         // Required empty public constructor
     }
@@ -75,6 +77,7 @@ public class HomeListItemDetailFragment extends Fragment {
         RecyclerView rcvHomeItems= view.findViewById(R.id.rcvHomeItemsDetail);
         rcvItems.setLayoutManager(new GridLayoutManager(getActivity(),4));
         rcvHomeItems.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rcvItems.addItemDecoration(new ItemOffsetDecoration(2));
         rcvItems.setAdapter(new HomeDetailedrRoundItemAdapter(new OnItemSelectedlistner() {
             @Override
             public void onItemClick(Object object, int position) {
@@ -82,14 +85,14 @@ public class HomeListItemDetailFragment extends Fragment {
                //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new HomeItemDetailChildFragment()).commit();
                 startActivity(new Intent(getActivity(),HomeDetailedActivity.class));
             }
-        }));
+        },headings_detail,images_detail));
         rcvHomeItems.setAdapter(new HomeItemsListAdapter(new OnItemSelectedlistner() {
             @Override
             public void onItemClick(Object object, int position) {
                // Toast.makeText(getContext(),"Clicked",Toast.LENGTH_LONG).show();
                // getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new HomeItemDetailChildFragment()).commit();
             }
-        }));
+        }, headings, images));
         return view;
     }
 }

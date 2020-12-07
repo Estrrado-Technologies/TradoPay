@@ -6,7 +6,8 @@
     android:id="@+id/cardOffer"
     android:elevation="8dp"
     app:cardElevation="@dimen/margin_5dp"
-    app:cardCornerRadius="7dp">
+    app:cardCornerRadius="@dimen/margin_8dp"
+    app:contentPadding="@dimen/margin_4dp">
 <androidx.constraintlayout.widget.ConstraintLayout
      android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,16 +15,16 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/offercardImgHeight"
+        android:layout_height="@dimen/bannerHeight"
         android:id="@+id/cardOfferImg"
         android:elevation="0dp"
         app:cardElevation="0dp"
         app:cardPreventCornerOverlap="false"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="@dimen/margin_8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_margin="@dimen/margin_7dp">
+        android:layout_margin="@dimen/margin_4dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -32,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/OfferImg"
-            android:background="@drawable/ic_login_bottom"/>
+            android:background="@drawable/restrnt"/>
 
            <TextView
                android:id="@+id/txtOfferTime"
@@ -44,7 +45,7 @@
                android:drawablePadding="@dimen/margin_5dp"
              android:text="28 mins"
                android:gravity="center"
-               android:layout_margin="@dimen/margin_5dp"
+               android:layout_margin="@dimen/margin_4dp"
                android:background="@drawable/round_corner_bg"
               />
 
@@ -59,24 +60,24 @@
       app:layout_constraintTop_toBottomOf="@+id/cardOfferImg"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="@dimen/margin_7dp"
-        android:layout_marginStart="@dimen/margin_5dp"
+        android:layout_marginStart="@dimen/margin_10dp"
        android:layout_marginEnd="@dimen/margin_10dp" />
     <TextView
         android:id="@+id/txtAdrs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="See All"
+        android:text="Chinese,South Indian"
         style="@style/text12sp_grey"
         app:layout_constraintTop_toBottomOf="@+id/txtName"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="@dimen/margin_5dp"
-        android:layout_marginStart="@dimen/margin_5dp"
+        android:layout_marginStart="@dimen/margin_10dp"
         android:layout_marginEnd="@dimen/margin_10dp" />
     <TextView
         android:id="@+id/txtdistance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="See All"
+        android:text="1.3 Kms"
         style="@style/text12sp_black"
         android:drawableStart="@drawable/ic_pin"
         android:drawablePadding="@dimen/margin_5dp"
@@ -84,7 +85,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtAdrs"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="@dimen/margin_5dp"
-       android:layout_marginStart="2dp"
+       android:layout_marginStart="@dimen/margin_8dp"
         android:layout_marginEnd="@dimen/margin_10dp"
        />
 

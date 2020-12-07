@@ -18,7 +18,7 @@ public class BannerViewPagerAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private Integer [] images = {R.drawable.ic_login_bottom,R.drawable.ic_login_bottom,R.drawable.ic_login_bottom};
+    private Integer [] images = {R.drawable.bannr,R.drawable.bannr,R.drawable.bannr};
 
     public BannerViewPagerAdapter(Context context) {
         this.context = context;

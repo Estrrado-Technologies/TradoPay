@@ -3,23 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/cardAppo"
-android:layout_width="@dimen/width_200"
-android:layout_height="@dimen/width_200">
+android:layout_width="@dimen/width_180"
+android:layout_height="@dimen/width_180">
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/margin_5dp">
     <ImageView
+        android:id="@+id/imgAd"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/ic_login_bottom"/>
     <TextView
+        android:id="@+id/txtAd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/text20sp_black_bold"
+        style="@style/text18sp_black_bold"
         android:text="Booking Appoinments made easy"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"

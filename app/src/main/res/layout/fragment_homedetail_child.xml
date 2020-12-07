@@ -32,7 +32,7 @@
         android:id="@+id/txtDetailChild"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/text20sp_black_bold"
+        style="@style/text18sp_black_bold"
         android:text="Delivery at your door steps"
       />
         <TextView
@@ -51,8 +51,6 @@
         android:id="@+id/griditems"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_7dp"
-        android:layout_marginRight="@dimen/margin_7dp"
         android:layout_marginBottom="@dimen/margin_10dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -82,7 +80,7 @@
         android:id="@+id/txtOfferHead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/text20sp_black_bold"
+        style="@style/text18sp_black_bold"
         android:text="Great Offers"
         android:layout_alignParentEnd="false"
       android:layout_alignParentStart="true"
@@ -120,6 +118,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         tools:listitem="@layout/layout_ads_detaild_child"
         tools:itemCount="2"
+        android:layout_marginLeft="@dimen/margin_4dp"
         android:layout_marginTop="@dimen/margin_10dp"
         app:layout_constraintTop_toBottomOf="@id/rcvofferList"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
@@ -138,7 +137,7 @@
             android:id="@+id/txtTrend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/text20sp_black_bold"
+            style="@style/text18sp_black_bold"
             android:text="Trending Places"
             android:layout_alignParentEnd="false"
             android:layout_alignParentStart="true"

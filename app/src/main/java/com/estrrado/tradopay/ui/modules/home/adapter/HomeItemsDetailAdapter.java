@@ -3,6 +3,8 @@ package com.estrrado.tradopay.ui.modules.home.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,9 +15,12 @@ import com.example.tradopay.R;
 public class HomeItemsDetailAdapter extends RecyclerView.Adapter<HomeItemsDetailAdapter.HomeItemsListViewHolder> {
 
     OnItemSelectedlistner onItemSelectedlistner;
-    public HomeItemsDetailAdapter(OnItemSelectedlistner onItemSelectedlistner) {
+    String[] arr;
+    int[] imgs;
+    public HomeItemsDetailAdapter(OnItemSelectedlistner onItemSelectedlistner,String[] arr,int[] imgs) {
         this.onItemSelectedlistner=onItemSelectedlistner;
-
+        this.arr=arr;
+        this.imgs=imgs;
     }
 
     @NonNull
@@ -26,6 +31,8 @@ public class HomeItemsDetailAdapter extends RecyclerView.Adapter<HomeItemsDetail
 
     @Override
     public void onBindViewHolder(@NonNull HomeItemsListViewHolder holder, int position) {
+        holder.img.setImageResource(imgs[position]);
+        holder.txt.setText(arr[position]);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,13 +44,17 @@ public class HomeItemsDetailAdapter extends RecyclerView.Adapter<HomeItemsDetail
 
     @Override
     public int getItemCount() {
-        return 12;
+        return imgs.length;
     }
 
     public class HomeItemsListViewHolder extends RecyclerView.ViewHolder
     {
+        TextView txt;
+        ImageView img;
         public HomeItemsListViewHolder(@NonNull View itemView) {
             super(itemView);
+            txt=itemView.findViewById(R.id.txtItemName);
+            img=itemView.findViewById(R.id.imgItem);
         }
     }
 }

@@ -31,9 +31,9 @@
         tools:layout="@layout/fragment_wallet" />
 
 
-    <fragment
+    <activity
         android:id="@+id/navigation_explore"
-        android:name="com.estrrado.tradopay.ui.modules.explore.ExploreFragment"
+        android:name="com.estrrado.tradopay.ui.modules.explore.ExploreOpenActivity"
         android:label="@string/title_explore"
         tools:layout="@layout/fragment_explore" />
 

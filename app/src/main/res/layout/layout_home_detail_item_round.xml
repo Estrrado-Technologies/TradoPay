@@ -17,8 +17,9 @@
          app:cardBackgroundColor="@color/white"
          android:layout_margin="@dimen/margin_2dp"
          android:clipToPadding="true"
-         app:contentPadding="@dimen/margin_7dp">
+         app:contentPadding="@dimen/margin_10dp">
         <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/imgDetailRound"
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

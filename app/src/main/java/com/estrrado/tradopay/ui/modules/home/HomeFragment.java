@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,6 +37,10 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     ViewPager vpBannerSlider;
     TooltipIndicator indicator;
+    String headings[] [] ={{"Delivery At Your Doorsteps","Restaurants,Bakery,Grocery,Household Items and many other items","Order Now"},{"Book Your Appointments","Doctors,Car/Bike Wash & Service centers,, Saloons,Spa/Parlors,Gyms and other services","Book Now"},{"Cashbacks and Offers" ,"View Cashbacks and Offers","View All"}};
+    int[] images={R.drawable.scty_grl,R.drawable.appoinmt,R.drawable.sale};
+    private TextView txtAdHead;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
@@ -43,8 +48,10 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         vpBannerSlider =root.findViewById(R.id.vpBannerSlider);
         indicator =root.findViewById(R.id.tooltip_indicator);
+        txtAdHead =root.findViewById(R.id.txtAdHead);
         RecyclerView rcvHomeItems = root.findViewById(R.id.rcvHomeItems);
         rcvHomeItems.setLayoutManager(new LinearLayoutManager(getActivity()));
+        txtAdHead.setText("Today's Top Deals");
         rcvHomeItems.setAdapter(new HomeItemsListAdapter(new OnItemSelectedlistner() {
             @Override
             public void onItemClick(Object object, int position) {
@@ -53,7 +60,7 @@ public class HomeFragment extends Fragment {
                 //controller.navigate(R.id.action_home);
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new HomeListItemDetailFragment()).commit();
             }
-        }));
+        },headings,images));
 
 //        FragmentContainerView fragmentContainerView =root.findViewById(R.id.fcvHomeScreen);
        BannerViewPagerAdapter adapter = new BannerViewPagerAdapter(getActivity());
