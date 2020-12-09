@@ -7,4 +7,4 @@
     android:paddingRight="@dimen/margin_10dp"
     android:paddingTop="@dimen/margin_4dp"
     android:paddingBottom="@dimen/margin_4dp"
-    android:text="biriyani"/>
+    android:text="Kuttanad Meals"/>

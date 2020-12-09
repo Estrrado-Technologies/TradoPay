@@ -1,5 +1,7 @@
 plugins {
     id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -44,6 +46,9 @@ dependencies {
     //viewpager indicator
     implementation 'me.huseyinozer:tooltipindicator:0.0.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    //kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
