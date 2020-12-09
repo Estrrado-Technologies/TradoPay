@@ -10,28 +10,44 @@ import androidx.navigation.ui.NavigationUI
 import com.estrrado.tradopay.fragments.HomeItemDetailChildFragment
 import com.example.tradopay.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_detailed.*
 
-class HomeDetailedActivity : AppCompatActivity() {
+class HomeDetailedActivity : BaseActivity() {
     var toolbar: Toolbar? = null
     private var onDestinationChangedListener: OnDestinationChangedListener? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+    }
+
+    override fun initLayout() {
         setContentView(R.layout.activity_detailed)
         val navView = findViewById<BottomNavigationView>(R.id.nav_view)
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration.Builder(R.id.navigation_detailed, R.id.navigation_explore, R.id.navigation_notifications, R.id.navigation_wallet, R.id.navigation_favourites)
+        val appBarConfiguration = AppBarConfiguration.Builder(R.id.navigation_detailed,
+                R.id.navigation_explore, R.id.navigation_notifications, R.id.navigation_wallet,
+                R.id.navigation_favourites)
                 .build()
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
+        NavigationUI.setupActionBarWithNavController(this, navController,appBarConfiguration)
         NavigationUI.setupWithNavController(navView, navController)
-        onDestinationChangedListener = OnDestinationChangedListener { controller, destination, arguments ->
-            val fragment = supportFragmentManager.primaryNavigationFragment!!.childFragmentManager.primaryNavigationFragment
+    }
+
+    override fun initListeners() {
+        onDestinationChangedListener = OnDestinationChangedListener { controller, destination,
+                                                                      arguments ->
+            val fragment = supportFragmentManager.primaryNavigationFragment!!.
+            childFragmentManager.primaryNavigationFragment
             if (fragment is HomeItemDetailChildFragment) {
-                navView.selectedItemId = R.id.navigation_detailed
+                nav_view.selectedItemId = R.id.navigation_detailed
             }
         }
+    }
+
+    override fun initObservers() {
+        TODO("Not yet implemented")
     }
 }

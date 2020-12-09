@@ -14,15 +14,20 @@ import androidx.navigation.ui.NavigationUI
 import com.estrrado.tradopay.fragments.HomeFragment
 import com.example.tradopay.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     var toolbar: Toolbar? = null
     var navController: NavController? = null
     var navHostFragment: NavHostFragment? = null
     var onDestinationChangedListener: OnDestinationChangedListener? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+    }
+
+    override fun initLayout() {
         setContentView(R.layout.activity_main)
         var navView: BottomNavigationView? = findViewById(R.id.nav_view)
         toolbar = findViewById(R.id.toolbar)
@@ -30,21 +35,30 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration.Builder(R.id.navigation_home, R.id.navigation_explore, R.id.navigation_notifications, R.id.navigation_wallet, R.id.navigation_favourites)
+        val appBarConfiguration = AppBarConfiguration.Builder(R.id.navigation_home,
+                R.id.navigation_explore, R.id.navigation_notifications, R.id.navigation_wallet,
+                R.id.navigation_favourites)
                 .build()
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         NavigationUI.setupActionBarWithNavController(this, navController!!, appBarConfiguration)
         if (navView != null) {
             NavigationUI.setupWithNavController(navView, navController!!)
         }
+    }
+
+    override fun initListeners() {
         onDestinationChangedListener = OnDestinationChangedListener { controller, destination, arguments ->
             val fragment = Objects.requireNonNull(supportFragmentManager.primaryNavigationFragment)?.childFragmentManager?.primaryNavigationFragment
             if (fragment is HomeFragment) {
-                if (navView != null) {
-                    navView.setSelectedItemId(R.id.navigation_home)
+                if (nav_view != null) {
+                    nav_view.setSelectedItemId(R.id.navigation_home)
                 }
             }
         }
+    }
+
+    override fun initObservers() {
+        TODO("Not yet implemented")
     }
 
     override fun onAttachFragment(fragment: Fragment) {

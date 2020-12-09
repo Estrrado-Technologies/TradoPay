@@ -16,19 +16,25 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.estrrado.tradopay.activity.HomeDetailedActivity
 import com.estrrado.tradopay.adapter.HomeItemsListAdapter
+import kotlinx.android.synthetic.main.fragment_home_item_list.*
 
 /**
  * A simple [Fragment] subclass.
  * Use the [HomeListItemDetailFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeListItemDetailFragment : Fragment() {
+class HomeListItemDetailFragment : BaseFragment() {
     // TODO: Rename and change types of parameters
     private var mParam1: String? = null
     private var mParam2: String? = null
-    var images_detail = intArrayOf(R.drawable.rest, R.drawable.bak, R.drawable.groc, R.drawable.frut, R.drawable.book, R.drawable.cloth, R.drawable.elec, R.drawable.medi)
-    var headings_detail = arrayOf("Restaurants", "Bakery", "Groceries", "Fruits &\nVegetables", "Books", "Cloths", "Electronics", "Medicines")
-    var headings = arrayOf(arrayOf("Delivery At Your Doorsteps", "Restaurants,Bakery,Grocery,Household Items and many other items", "Order Now"), arrayOf("Book Your Appointments", "Doctors,Car/Bike Wash & Service centers,, Saloons,Spa/Parlors,Gyms and other services", "Book Now"), arrayOf("Cashbacks and Offers", "View Cashbacks and Offers", "View All"))
+    var images_detail = intArrayOf(R.drawable.rest, R.drawable.bak, R.drawable.groc,
+            R.drawable.frut, R.drawable.book, R.drawable.cloth, R.drawable.elec, R.drawable.medi)
+    var headings_detail = arrayOf("Restaurants", "Bakery", "Groceries", "Fruits &\nVegetables",
+            "Books", "Cloths", "Electronics", "Medicines")
+    var headings = arrayOf(arrayOf("Delivery At Your Doorsteps", "Restaurants,Bakery,Grocery," +
+            "Household Items and many other items", "Order Now"), arrayOf("Book Your Appointments",
+            "Doctors,Car/Bike Wash & Service centers,, Saloons,Spa/Parlors,Gyms and other services",
+            "Book Now"), arrayOf("Cashbacks and Offers", "View Cashbacks and Offers", "View All"))
     var images = intArrayOf(R.drawable.scty_grl, R.drawable.appoinmt, R.drawable.sale)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,9 +44,7 @@ class HomeListItemDetailFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
+    override fun initLayout(inflater: LayoutInflater, container: ViewGroup?): View {
         val view = inflater.inflate(R.layout.fragment_home_detail, container, false)
         val rcvItems: RecyclerView = view.findViewById(R.id.rcvItems)
         val rcvHomeItems: RecyclerView = view.findViewById(R.id.rcvHomeItemsDetail)
@@ -49,18 +53,24 @@ class HomeListItemDetailFragment : Fragment() {
         rcvItems.addItemDecoration(ItemOffsetDecoration(2))
         rcvItems.adapter = HomeDetailedrRoundItemAdapter(object : OnItemSelectedlistner {
             override fun onItemClick(`object`: Any?, position: Int) {
-                // Toast.makeText(getContext(),"Clicked",Toast.LENGTH_LONG).show();
-                //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new HomeItemDetailChildFragment()).commit();
                 startActivity(Intent(activity, HomeDetailedActivity::class.java))
             }
         }, headings_detail, images_detail)
+
+        return view
+    }
+
+    override fun initListeners(view: View) {
         rcvHomeItems.adapter = HomeItemsListAdapter(object : OnItemSelectedlistner {
             override fun onItemClick(`object`: Any?, position: Int) {
                 // Toast.makeText(getContext(),"Clicked",Toast.LENGTH_LONG).show();
                 // getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new HomeItemDetailChildFragment()).commit();
             }
         }, headings, images)
-        return view
+    }
+
+    override fun initObservers() {
+        TODO("Not yet implemented")
     }
 
     companion object {

@@ -9,17 +9,19 @@ import androidx.lifecycle.ViewModelProvider
 import com.estrrado.tradopay.viewmodel.HomeViewModel
 import com.example.tradopay.R
 
-class FavouriteFragment : Fragment() {
+class FavouriteFragment : BaseFragment() {
     private var homeViewModel: HomeViewModel? = null
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+    override fun initLayout(inflater: LayoutInflater, container: ViewGroup?): View {
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        /*   final TextView textView = root.findViewById(R.id.text_home);
-      homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-          @Override
-          public void onChanged(@Nullable String s) {
-              textView.setText(s);
-          }
-      });*/return inflater.inflate(R.layout.fragment_favourite, container, false)
+        return inflater.inflate(R.layout.fragment_favourite, container, false)
+    }
+
+    override fun initListeners(view: View) {
+        TODO("Not yet implemented")
+    }
+
+    override fun initObservers() {
+        TODO("Not yet implemented")
     }
 }

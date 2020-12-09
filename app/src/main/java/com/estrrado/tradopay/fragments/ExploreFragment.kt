@@ -20,17 +20,23 @@ import com.estrrado.tradopay.viewmodel.ExploreViewModel
 
 import com.example.tradopay.R
 
-class ExploreFragment : Fragment() {
+class ExploreFragment : BaseFragment() {
+
     private var exploreViewModel: ExploreViewModel? = null
     var icSearch: EditText? = null
-    var images = intArrayOf(R.drawable.puttu, R.drawable.prawns_biriyani, R.drawable.burger, R.drawable.alcohol, R.drawable.puttu)
-    var images_offer = intArrayOf(R.drawable.restrnt, R.drawable.restrnt, R.drawable.restrnt, R.drawable.restrnt, R.drawable.restrnt)
-    var headings_trend = arrayOf("Biriyani", "Pizza", "Kuttanad Hotel", "Meals", "Mithai", "Pankaj Hotel", "Taj Hotel")
-    var headings_cusin = arrayOf(" South Indian", "Biriyani", "Burger", "Bevereges", " South Indian")
+    var images = intArrayOf(R.drawable.puttu, R.drawable.prawns_biriyani, R.drawable.burger,
+            R.drawable.alcohol, R.drawable.puttu)
+    var images_offer = intArrayOf(R.drawable.restrnt, R.drawable.restrnt, R.drawable.restrnt,
+            R.drawable.restrnt, R.drawable.restrnt)
+    var headings_trend = arrayOf("Biriyani", "Pizza", "Kuttanad Hotel", "Meals", "Mithai",
+            "Pankaj Hotel", "Taj Hotel")
+    var headings_cusin = arrayOf(" South Indian", "Biriyani", "Burger", "Bevereges"," South Indian")
     var headings_offer = arrayOf("Zam Zam", "Pankaj Hotel", "Puttukada", "Rajadhani", "Taj")
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+    override fun initLayout(inflater: LayoutInflater, container: ViewGroup?): View {
+
         exploreViewModel = ViewModelProvider(this).get<ExploreViewModel>(ExploreViewModel::class.java)
+
         val root = inflater.inflate(R.layout.fragment_explore, container, false)
         icSearch = root.findViewById(R.id.icSearch)
         var rcvSearch: RecyclerView? = root.findViewById(R.id.rcvSearchItem)
@@ -38,17 +44,21 @@ class ExploreFragment : Fragment() {
         var rcvOffers: RecyclerView? = root.findViewById(R.id.rcvSearchOffer)
         //rcvSearch.setLayoutManager(new GridLayoutManager(getActivity(), 4));
 // set a StaggeredGridLayoutManager with 3 number of columns and vertical orientation
-        val staggeredGridLayoutManager = StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.HORIZONTAL)
-        val gridLayoutManager = GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false)
+        val staggeredGridLayoutManager = StaggeredGridLayoutManager(4,
+                StaggeredGridLayoutManager.HORIZONTAL)
+        val gridLayoutManager = GridLayoutManager(context, 3, GridLayoutManager.VERTICAL,
+                false)
         if (rcvCusins != null) {
-            rcvCusins.setLayoutManager(LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false));
+            rcvCusins.setLayoutManager(LinearLayoutManager(activity, RecyclerView.HORIZONTAL,
+                    false));
             rcvCusins.addItemDecoration(ItemOffsetDecoration(5));
             rcvCusins.setAdapter(HomeItemsDetailAdapter(object : OnItemSelectedlistner {
                 override fun onItemClick(`object`: Any?, position: Int) {}
             }, headings_cusin, images))
         }
         if (rcvOffers != null) {
-            rcvOffers.setLayoutManager(LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false));
+            rcvOffers.setLayoutManager(LinearLayoutManager(activity, RecyclerView.HORIZONTAL,
+                    false));
             rcvOffers.addItemDecoration(ItemOffsetDecoration(5))
             rcvOffers.setAdapter(HomeItemsDetailAdapter(object : OnItemSelectedlistner {
                 override fun onItemClick(`object`: Any?, position: Int) {}
@@ -62,7 +72,14 @@ class ExploreFragment : Fragment() {
                 override fun onItemClick(`object`: Any?, position: Int) {}
             }, headings_trend))
         }
+        return root
+    }
 
-        return root;
+    override fun initListeners(view: View) {
+        TODO("Not yet implemented")
+    }
+
+    override fun initObservers() {
+
     }
 }

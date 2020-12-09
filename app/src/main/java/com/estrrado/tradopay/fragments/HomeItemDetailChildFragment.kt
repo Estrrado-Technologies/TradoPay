@@ -25,7 +25,7 @@ import java.util.*
  * Use the [HomeItemDetailChildFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeItemDetailChildFragment : Fragment() {
+class HomeItemDetailChildFragment : BaseFragment() {
     // TODO: Rename and change types of parameters
     private var mParam1: String? = null
     private var mParam2: String? = null
@@ -54,11 +54,7 @@ class HomeItemDetailChildFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    override fun initLayout(inflater: LayoutInflater, container: ViewGroup?): View {
         val view = inflater.inflate(R.layout.fragment_homedetail_child, container, false)
         val adapter = BannerViewPagerAdapter(requireActivity())
         vpBannerSlider = view.findViewById(R.id.vpBannerSlider)
@@ -72,9 +68,9 @@ class HomeItemDetailChildFragment : Fragment() {
         txtAdHead.visibility = View.GONE
         val linearLayoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         val linearLayoutManager_rcvOffers =
-            LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+                LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         val linearLayoutManager_trending =
-            LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+                LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         val linearLayoutManager_ads = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         val linearLayoutManagerMain = LinearLayoutManager(context)
         view.griditems.setLayoutManager(linearLayoutManager)
@@ -86,6 +82,28 @@ class HomeItemDetailChildFragment : Fragment() {
         view.rcvTrendingList.addItemDecoration(ItemOffsetDecoration(10))
         view.rcvAds.addItemDecoration(ItemOffsetDecoration(5))
         view.rcvofferList.addItemDecoration(ItemOffsetDecoration(10))
+
+        //HomeDetailOfferAdapter
+        view.vpBannerSlider.setAdapter(adapter)
+        val indicator: TooltipIndicator = view.findViewById(R.id.tooltip_indicator)
+        indicator.setupViewPager(vpBannerSlider)
+        indicator.setToolTipDrawables(
+                Arrays.asList(
+                        ContextCompat.getDrawable(requireActivity(), R.drawable.ic_login_top),
+                        ContextCompat.getDrawable(requireActivity(), R.drawable.ic_login_bottom),
+                        ContextCompat.getDrawable(requireActivity(), R.drawable.ic_launcher_background),
+                        ContextCompat.getDrawable(requireActivity(), R.drawable.ic_login_top),
+                        ContextCompat.getDrawable(requireActivity(), R.drawable.ic_login_bottom)
+                )
+        )
+        val timer = Timer()
+        val activity = activity as HomeDetailedActivity?
+        timer.scheduleAtFixedRate(MyTimerTask(activity), 2000, 4000)
+        return view
+    }
+
+    override fun initListeners(view: View) {
+
         view.rcvAds.setAdapter(HomeDetaildChildAdsAdapter(object : OnItemSelectedlistner {
             override fun onItemClick(`object`: Any?, position: Int) {}
         }, headings_ads, imagAds))
@@ -100,23 +118,11 @@ class HomeItemDetailChildFragment : Fragment() {
         view.griditems.setAdapter(HomeItemsDetailAdapter(object : OnItemSelectedlistner {
             override fun onItemClick(`object`: Any?, position: Int) {}
         }, headings_cusin, images))
-        //HomeDetailOfferAdapter
-        view.vpBannerSlider.setAdapter(adapter)
-        val indicator: TooltipIndicator = view.findViewById(R.id.tooltip_indicator)
-        indicator.setupViewPager(vpBannerSlider)
-        indicator.setToolTipDrawables(
-            Arrays.asList(
-                ContextCompat.getDrawable(requireActivity(), R.drawable.ic_login_top),
-                ContextCompat.getDrawable(requireActivity(), R.drawable.ic_login_bottom),
-                ContextCompat.getDrawable(requireActivity(), R.drawable.ic_launcher_background),
-                ContextCompat.getDrawable(requireActivity(), R.drawable.ic_login_top),
-                ContextCompat.getDrawable(requireActivity(), R.drawable.ic_login_bottom)
-            )
-        )
-        val timer = Timer()
-        val activity = activity as HomeDetailedActivity?
-        timer.scheduleAtFixedRate(MyTimerTask(activity), 2000, 4000)
-        return view
+
+    }
+
+    override fun initObservers() {
+        TODO("Not yet implemented")
     }
 
     inner class MyTimerTask(var activity: HomeDetailedActivity?) : TimerTask() {

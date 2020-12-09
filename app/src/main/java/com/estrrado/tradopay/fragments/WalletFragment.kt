@@ -9,17 +9,23 @@ import androidx.lifecycle.ViewModelProvider
 import com.estrrado.tradopay.viewmodel.WalletViewModel
 import com.example.tradopay.R
 
-class WalletFragment : Fragment() {
+class WalletFragment : BaseFragment() {
+
     private var dashboardViewModel: WalletViewModel? = null
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+
+    override fun initLayout(inflater: LayoutInflater, container: ViewGroup?): View {
+
         dashboardViewModel = ViewModelProvider(this).get(WalletViewModel::class.java)
-        /*  final TextView textView = root.findViewById(R.id.text_dashboard);
-      dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-          @Override
-          public void onChanged(@Nullable String s) {
-              textView.setText(s);
-          }
-      });*/return inflater.inflate(R.layout.fragment_wallet, container, false)
+        return inflater.inflate(R.layout.fragment_wallet, container, false)
+
+    }
+
+    override fun initListeners(view: View) {
+        TODO("Not yet implemented")
+    }
+
+    override fun initObservers() {
+        TODO("Not yet implemented")
     }
 }
