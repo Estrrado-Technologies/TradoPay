@@ -1,4 +1,4 @@
-package com.estrrado.tradopay.ui.modules.explore
+package  com.estrrado.tradopay.activity
 
 import android.os.Bundle
 import android.view.MenuItem

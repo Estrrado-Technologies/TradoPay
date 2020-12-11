@@ -11,16 +11,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TradoPay">
         <activity
-            android:name="com.estrrado.tradopay.ui.modules.explore.ExploreOpenActivity"
+            android:name="com.estrrado.tradopay.activity.ExploreOpenActivity"
             android:label="@string/title_activity_explore_open"
             android:theme="@style/Theme.TradoPay.NoActionBar"></activity>
         <activity
-            android:name="com.estrrado.tradopay.ui.modules.home.HomeDetailedActivity"
+            android:name="com.estrrado.tradopay.activity.HomeDetailedActivity"
             android:label="@string/title_activity_home_detailed"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.estrrado.tradopay.ui.modules.auth.LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            android:name="com.estrrado.tradopay.activity.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.estrrado.tradopay.ui.modules.MainActivity"
+            android:name= "com.estrrado.tradopay.activity.MainActivity"
             android:screenOrientation="portrait" />
     </application>
 
