@@ -41,7 +41,7 @@ abstract class BaseActivity: AppCompatActivity() {
       //  preferences = Preferences.getInstance(newBase!!)
 
         // Get localized context
-        super.attachBaseContext(context)
+        super.attachBaseContext(newBase)
     }
 
     /**
